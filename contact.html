@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - TeknoÜniversite</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="nav__brand">TeknoÜniversite</a>
+            <ul class="nav__menu">
+                <li><a href="index.html" class="nav__menu-link">Ana Sayfa</a></li>
+                <li><a href="departments.html" class="nav__menu-link">Bölümler</a></li>
+                <li><a href="contact.html" class="nav__menu-link active">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="hero">
+            <h1 class="hero__title">İletişim</h1>
+            <p class="hero__subtitle">Bizimle iletişime geçin</p>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-form">
+                <h2 style="color: #2C3E50; margin-bottom: 2rem;">İletişim Formu</h2>
+                
+                <form>
+                    <div class="contact-form__group">
+                        <label class="contact-form__label">Ad Soyad</label>
+                        <input type="text" class="contact-form__input" required>
+                    </div>
+                    
+                    <div class="contact-form__group">
+                        <label class="contact-form__label">E-posta</label>
+                        <input type="email" class="contact-form__input" required>
+                    </div>
+                    
+                    <div class="contact-form__group">
+                        <label class="contact-form__label">Konu</label>
+                        <input type="text" class="contact-form__input" required>
+                    </div>
+                    
+                    <div class="contact-form__group">
+                        <label class="contact-form__label">Mesajınız</label>
+                        <textarea class="contact-form__textarea" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="contact-form__button">Gönder</button>
+                </form>
+            </div>
+
+            <div style="margin-top: 3rem; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <h3 style="color: #2C3E50; margin-bottom: 1rem;">İletişim Bilgileri</h3>
+                <p><strong>Adres:</strong> Teknopark Mahallesi, Üniversite Caddesi No: 123, 34500 İstanbul</p>
+                <p><strong>Telefon:</strong> +90 (212) 123 45 67</p>
+                <p><strong>E-posta:</strong> info@teknouniversite.edu.tr</p>
+                <p><strong>Çalışma Saatleri:</strong> Pazartesi - Cuma: 08:30 - 17:30</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 TeknoÜniversite. Tüm hakları saklıdır.</p>
+    </footer>
+</body>
+</html>

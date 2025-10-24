@@ -1,0 +1,246 @@
+// Değişkenler - Üniversite renkleri
+$primary-color: #2C3E50;
+$secondary-color: #E74C3C;
+$accent-color: #3498DB;
+$light-bg: #F8F9FA;
+$text-dark: #2C3E50;
+$text-light: #7F8C8D;
+
+// Font ayarları
+$font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-heading: 'Georgia', serif;
+
+// Mixin'ler
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin card-shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+// Temel stiller
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-main;
+  line-height: 1.6;
+  color: $text-dark;
+}
+
+// Header stilleri
+.header {
+  background: linear-gradient(135deg, $primary-color 0%, darken($primary-color, 10%) 100%);
+  color: white;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+
+  .nav {
+    @include flex-center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    &__brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      
+      &:hover {
+        color: lighten($accent-color, 20%);
+      }
+    }
+
+    &__menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+
+      &-link {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        &.active {
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
+}
+
+// Main content
+.main-content {
+  margin-top: 80px;
+  min-height: calc(100vh - 160px);
+}
+
+// Hero section
+.hero {
+  background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('../assets/uni-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+
+  &__title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: $font-heading;
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+}
+
+// Bölüm stilleri
+.departments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.department-card {
+  @include card-shadow;
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  border-left: 4px solid $accent-color;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &__title {
+    color: $primary-color;
+    margin-bottom: 1rem;
+    font-family: $font-heading;
+  }
+
+  &__list {
+    list-style: none;
+    
+    &-item {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+// İletişim formu
+.contact-section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.contact-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  @include card-shadow;
+
+  &__group {
+    margin-bottom: 1.5rem;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: $primary-color;
+    font-weight: bold;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    font-family: $font-main;
+    
+    &:focus {
+      outline: none;
+      border-color: $accent-color;
+    }
+  }
+
+  &__textarea {
+    height: 150px;
+    resize: vertical;
+  }
+
+  &__button {
+    background: $secondary-color;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background: darken($secondary-color, 10%);
+    }
+  }
+}
+
+// Footer
+.footer {
+  background: $primary-color;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .header .nav {
+    flex-direction: column;
+    gap: 1rem;
+    
+    &__menu {
+      gap: 1rem;
+    }
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .departments-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}
